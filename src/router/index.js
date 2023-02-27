@@ -14,6 +14,10 @@ const router = createRouter({
       name: "dispositivo",
       component: DeviceView,
     },
+    {
+      path: "/:pathMatch(.*)*",
+      redirect: () => ({ name: "home" }),
+    },
   ],
 });
 

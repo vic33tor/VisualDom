@@ -35,16 +35,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 //CRUD
 
-export const dameDocs = (ref) => getDocs(collection(db, ref));
-export const onIniciar = (ref, callback) =>
+export const onGet = (ref, callback) =>
   onSnapshot(collection(db, ref), callback);
-export const onGetSalas = (ref, callback) =>
-  onSnapshot(collection(db, ref), callback);
-export const onGetDispositivos = (ref, callback) =>
-  onSnapshot(collection(db, ref), callback);
-export const anadeSala = (ref, sala) => addDoc(collection(db, ref), sala);
-export const anadeDispositivo = (ref, dispositivo) =>
-  addDoc(collection(db, ref), dispositivo);
-export const borrar = (ref, id) => deleteDoc(doc(db, ref, id));
-export const getMascota = (ref, id) => getDoc(doc(db, ref, id));
 export const editar = (ref, id, objeto) => updateDoc(doc(db, ref, id), objeto);
