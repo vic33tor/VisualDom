@@ -59,10 +59,11 @@ onMounted(async () => {
     Nombre.value == "" ? router.push({ name: "home" }) : "";
   });
 });
-const editarDispositivo = (idDispositivo, temperatura) => {
+const editarDispositivo = (idDispositivo, temp) => {
   editar("Dispositivo", idDispositivo, {
-    Temperatura: temperatura,
+    Temperatura: temp,
   });
+  temperatura.value = "";
 };
 </script>
 
