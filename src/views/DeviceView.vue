@@ -19,6 +19,7 @@
       <h1 class="text-xl font-bold mb-3">Temperatura</h1>
       <input
         v-model="temperatura"
+        type="number"
         class="bg-[#F0EBCE] w-64 h-8 border-2 border-[#AA8B56]"
       /><br />
       <button
@@ -35,8 +36,6 @@
 import { ref, onMounted } from "vue";
 import { onGet, editar } from "@/API/firebase";
 import { useRoute } from "vue-router";
-import { useRouter } from "vue-router";
-const router = useRouter();
 const route = useRoute();
 const Nombre = ref("");
 const Sala = ref("");
@@ -56,7 +55,6 @@ onMounted(async () => {
           : (Estado.value = doc.data().Estado);
       }
     });
-    Nombre.value == "" ? router.push({ name: "home" }) : "";
   });
 });
 const editarDispositivo = (idDispositivo, temp) => {
